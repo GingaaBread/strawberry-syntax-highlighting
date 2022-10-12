@@ -1,0 +1,82 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Strawberry",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#strings-single"
+		},
+		{
+			"include": "#options"
+		},
+		{
+			"include": "#assignment"
+		},
+		{
+			"include": "#parameter"
+		},
+		{
+			"include": "#embedded"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "entity.other.attribute-name",
+				"match": "\\b(RENDER|REDIRECT|AUTH|AT)\\b"
+			}]
+		},
+		"options": {
+			"patterns": [{
+				"name": "entity.name.tag",
+				"match": "\\b(GET|POST|DELETE|SET|ROUTE)\\b"
+			}]
+		},
+		"parameter": {
+			"patterns": [{
+				"name": "meta.parameter.type.variable",
+				"match": "[\\[(.*)\\]]"
+			}]
+		},
+		"embedded": {
+			"patterns": [{
+				"name": "meta.embedded",
+				"match": ";"
+			}]
+		},
+		"assignment": {
+			"patterns": [{
+				"name": "meta.selector",
+				"match": "="
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.strawberry",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.strawberry",
+					"match": "\\\\."
+				}
+			]
+		},
+		"strings-single": {
+			"name": "string.quoted.single.strawberry",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.strawberry",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "straw.berry"
+}
